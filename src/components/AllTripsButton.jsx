@@ -12,17 +12,18 @@ class AllTripsButton extends Component {
 
   getTrips(userId) {
     if (!this.state.isToggleOn) {
-      this.setState({ trips: ['Middle Fork of the Salmon', 'Grand Canyon', 'Gates of Lodore'],
-                      isToggleOn: true})
+      this.setState({ trips: [{ id: 1, name: 'Middle Fork of the Salmon' },
+                              { id: 2, name: 'Grand Canyon' },
+                              { id: 3, name: 'Lochsa' }],
+                      isToggleOn: true
+                    })
     } else {
       this.setState({ trips: [], isToggleOn: false})
     }
   }
   tripList(allTrips) {
     return allTrips.map(trip => {
-      return( <Trip key={trip} name={trip}
-        />
-      )
+      return( <Trip key={trip.id} id={trip.id} name={trip.name} />)
     })
   }
 

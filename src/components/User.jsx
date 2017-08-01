@@ -16,7 +16,6 @@ class User extends Component {
     this.gearTypes = this.gearTypes.bind(this)
   }
 
-
   gearList(allGear){
     return allGear.map(gear => {
       return ( <GearItem
@@ -47,7 +46,6 @@ class User extends Component {
       )
     })
   }
-
 
   render() {
     return (
