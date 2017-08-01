@@ -17,7 +17,7 @@ class Trip extends Component {
 
   getGroup(tripId) {
     if (!this.state.isToggleOn) {
-      axios.get(`http://localhost:3000/api/v1/groups/${tripId}`)
+      axios.get(`https://river-right-be.herokuapp.com/api/v1/groups/${tripId}`)
       .then(response => {
         this.setState({ id: tripId, groupMembers: response.data, isToggleOn: true})
       })
@@ -48,7 +48,7 @@ class Trip extends Component {
 
   groupGear() {
     return this.state.groupMembers.map(member => {
-      axios.get(`http://localhost:3000/api/v1/usersGearList/${member.id}`)
+      axios.get(`https://river-right-be.herokuapp.com/api/v1/usersGearList/${member.id}`)
       .then(response => {
         return response.data.map(gear => {
           return (<GearItem key={gear.name} name={gear.name} />)

@@ -20,7 +20,7 @@ class Login extends Component {
   login(event) {
     const { updateAuthStatus } = this.props
 
-    fetch('http://localhost:3000/authenticate', {
+    fetch('https://river-right-be.herokuapp.com/authenticate', {
       method: 'POST',
       body: JSON.stringify(this.state),
       headers: {

@@ -28,7 +28,7 @@ class User extends Component {
 
   gearTypes(userId, gearId) {
     if (!this.state.isToggleOn) {
-      axios.get(`http://localhost:3000/api/v1/geartypes/${userId}/${gearId}`)
+      axios.get(`https://river-right-be.herokuapp.com/api/v1/geartypes/${userId}/${gearId}`)
       .then(response =>{
         this.setState({ gear: response.data, isToggleOn: true})
       })
